@@ -82,7 +82,8 @@ By the end of this lab, you will be able to:
    # TODO: Bind the socket to the host and port
    # (Fill in this section)
    ```
-   **Hint:** Use `server_socket.bind((host, port))` to bind the socket. This is similar to the `int bind(int sockfd, const struct sockaddre_in *localaddr, int localaddrlen)`
+   **Hint:** Use `server_socket.bind((host, port))` to bind the socket. 
+   This is similar to the `int bind(int sockfd, const struct sockaddr_in *localaddr, int localaddrlen)` function in Berkley sockets.
 
 4. Locate the following TODO comment:
    ```python
@@ -90,6 +91,7 @@ By the end of this lab, you will be able to:
    # (Fill in this section)
    ```
    **Hint:** Use `server_socket.listen(5)` to make the socket listen for connections.
+   This is similar to the `int listen(int sockfd, int backlog)` function in Berkley sockets.
 
 5. Locate the final TODO comment:
    ```python
@@ -97,6 +99,7 @@ By the end of this lab, you will be able to:
    conn, address = # (Fill in this section)  # Accept a new connection
    ```
    **Hint:** Use `server_socket.accept()` to accept a new connection.
+   This is similar to the `int accept(int sockfd, const struct sockaddr_in *clientaddr, int clientaddrlen)` function in Berkley sockets.
 
 6. Save your changes and close the file.
 
