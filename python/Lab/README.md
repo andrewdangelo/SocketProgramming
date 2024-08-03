@@ -3,7 +3,7 @@
 
 ## Introduction
 
-In this lab, you will create a simple multi-threaded client-server application using Python's `socket` and `threading` modules. The client will connect to the server, send messages, and receive responses. The server will handle multiple client connections concurrently and manage idle connections. You will fill in the missing parts of the provided code to complete the lab.
+In this lab, you will create a simple socket client-server application using Python's `socket` and `threading` modules. The client will connect to the server, send messages, and receive responses. The server will handle multiple client connections concurrently and manage idle connections. You will fill in the missing parts of the provided code to complete the lab.
 
 ## Objectives
 
@@ -20,14 +20,14 @@ By the end of this lab, you will be able to:
 
 ## Files Provided
 
-- `Client_Multi.py`: Contains the client code with placeholders for you to fill in.
-- `Server_Multi.py`: Contains the server code with placeholders for you to fill in.
+- `lab_client.py`: Contains the client code with placeholders for you to fill in.
+- `lab_server.py`: Contains the server code with placeholders for you to fill in.
 
 ## Lab Steps
 
 ### 1. Setting Up the Client
 
-1. Open `Client_Multi.py` in your favorite code editor.
+1. Open `lab_client.py` in your favorite code editor.
 
 2. Locate the first TODO comment:
    ```python
@@ -68,7 +68,7 @@ By the end of this lab, you will be able to:
 
 ### 2. Setting Up the Server
 
-1. Open `Server_Multi.py` in your favorite code editor.
+1. Open `lab_server.py` in your favorite code editor.
 
 2. Locate the first TODO comment:
    ```python
@@ -82,7 +82,7 @@ By the end of this lab, you will be able to:
    # TODO: Bind the socket to the host and port
    # (Fill in this section)
    ```
-   **Hint:** Use `server_socket.bind((host, port))` to bind the socket.
+   **Hint:** Use `server_socket.bind((host, port))` to bind the socket. This is similar to the `int bind(int sockfd, const struct sockaddre_in *localaddr, int localaddrlen)`
 
 4. Locate the following TODO comment:
    ```python
@@ -104,11 +104,11 @@ By the end of this lab, you will be able to:
 
 1. Open a terminal or command prompt.
 
-2. Navigate to the directory containing your `Client_Multi.py` and `Server_Multi.py` files.
+2. Navigate to the directory containing your `lab_client.py` and `lab_server.py` files.
 
 3. Start the server by running the following command:
    ```sh
-   python Server_Multi.py
+   python lab_server.py
    ```
    You should see a message indicating that the server is listening for connections.
 
@@ -116,7 +116,7 @@ By the end of this lab, you will be able to:
 
 5. Start the client by running the following command:
    ```sh
-   python Client_Multi.py
+   python lab_client.py
    ```
    You should see a message indicating that the client has connected to the server.
 
