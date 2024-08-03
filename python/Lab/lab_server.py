@@ -20,35 +20,33 @@ def handle_client(conn, address, active_connections, idle_event, server_running)
             if not data:
                 break  # If no data is received, break the loop
             print("Received from client:", data)
-            message = "Hello from server"
-            conn.send(message.encode())  # Send response to the client
-            print("Hello message sent")
-    except ConnectionResetError:
-        print(f"Connection from {address} was reset.")
+            message = f"Echo: {data}"  # Create a response message
+            conn.send(message.encode())  # Send the response back to the client
+            idle_event.set()  # Set the idle event to reset the idle timeout
+    except Exception as e:
+        print(f"Error: {e}")
     finally:
         conn.close()  # Close the connection
         active_connections.remove(conn)  # Remove the connection from the list of active connections
-        print(f"Connection from {address} closed.")
-        if not active_connections and server_running.is_set():  # If no active connections, set the idle event
-            idle_event.set()
+        idle_event.set()  # Set the idle event to reset the idle timeout
+        print("Connection closed:", address)
 
 def server_program():
-    """
-    Main function to start the server program.
-    """
-    host = '0.0.0.0'  # Listen on all available network interfaces
-    port = 8080  # Port number to listen on
-    idle_timeout = 30  # Timeout in seconds for the server to shut down when idle
+    host = '127.0.0.1'  # Server IP address
+    port = 8080  # Server port number
+    idle_timeout = 30  # Timeout for idle server (in seconds)
 
-    # Create a TCP socket
-    server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-    server_socket.bind((host, port))  # Bind the socket to the address and port
+    # TODO: Create a socket object using socket.AF_INET and socket.SOCK_STREAM
+    server_socket = # (Fill in this section)
 
-    server_socket.listen(3)  # Listen for incoming connections (up to 3 in the queue)
-    print("Server listening on port", port)
+    # TODO: Bind the socket to the host and port
+    # (Fill in this section)
 
-    active_connections = []  # List to keep track of active client connections
+    # TODO: Make the socket listen for incoming connections
+    # (Fill in this section)
+    print(f"Server listening on {host}:{port}")
+
+    active_connections = []  # List to keep track of active connections
     idle_event = threading.Event()  # Event to signal when the server is idle
     server_running = threading.Event()  # Event to signal whether the server is running
     server_running.set()  # Initially, set the server as running
@@ -74,7 +72,8 @@ def server_program():
     try:
         while server_running.is_set():  # Check if the server is still running
             try:
-                conn, address = server_socket.accept()  # Accept a new connection
+                # TODO: Accept a new connection
+                conn, address = # (Fill in this section)  # Accept a new connection
                 idle_event.clear()  # Clear the idle event as there is an active connection
                 active_connections.append(conn)  # Add the connection to the list of active connections
                 # Start a new thread to handle the client
