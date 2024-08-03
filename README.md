@@ -16,6 +16,9 @@ Key concepts in Berkeley sockets include:
 - **Accepting Connections**: Accepting incoming connections using the `accept()` function.
 - **Sending and Receiving Data**: Using the `send()` and `recv()` functions to communicate data between sockets.
 
+![Alt Text](images/img1.png)
+![Alt Text](images/img2.png)
+
 ## Python Lab: Multi-threaded Client-Server Application
 
 The Python lab guides you through creating a multi-threaded client-server application. You will learn to:
