@@ -27,10 +27,10 @@ The Python lab guides you through creating a multi-threaded client-server applic
 - Manage idle connections on the server.
 
 ### Files Provided
-- `Client_Multi.py`: Contains the client code with placeholders for you to fill in.
-- `Server_Multi.py`: Contains the server code with placeholders for you to fill in.
+- `lab_client.py`: Contains the client code with placeholders for you to fill in.
+- `lab_server.py`: Contains the server code with placeholders for you to fill in.
 
-For detailed instructions on the Python lab, refer to the `README_Python.md` file.
+For detailed instructions on the Python lab, refer to the `python/README.md` file.
 
 ## C Lab: Multi-threaded Client-Server Application
 
@@ -40,10 +40,10 @@ The C lab guides you through creating a multi-threaded client-server application
 - Manage idle connections on the server.
 
 ### Files Provided
-- `Client_Multi.c`: Contains the client code with placeholders for you to fill in.
-- `Server_Multi.c`: Contains the server code with placeholders for you to fill in.
+- `lab_client.c`: Contains the client code with placeholders for you to fill in.
+- `lab_server.c`: Contains the server code with placeholders for you to fill in.
 
-For detailed instructions on the C lab, refer to the `README_C.md` file.
+For detailed instructions on the C lab, refer to the `C/README.md` file.
 
 ## Conclusion
 
